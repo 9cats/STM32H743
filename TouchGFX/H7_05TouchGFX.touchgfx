@@ -1,0 +1,273 @@
+{
+  "Application": {
+    "Screens": [
+      {
+        "Name": "Introduction",
+        "Components": [
+          {
+            "Type": "Box",
+            "Name": "background",
+            "Width": 800,
+            "Height": 480,
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "headline",
+            "Y": 73,
+            "Width": 800,
+            "Height": 298,
+            "TextId": "introduction",
+            "TextRotation": "0",
+            "Fadeable": true,
+            "Moveable": true
+          },
+          {
+            "Type": "Image",
+            "Name": "arrow_left",
+            "X": 6,
+            "Y": 224,
+            "Width": 16,
+            "Height": 16,
+            "RelativeFilename": "arrow_left.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "arrow_right",
+            "X": 776,
+            "Y": 224,
+            "Width": 16,
+            "Height": 16,
+            "RelativeFilename": "arrow_right.png"
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "Interaction1",
+            "Trigger": {
+              "Type": "TriggerPhysicalButtonClicked"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionSlide",
+              "ScreenTransitionDirection": "West",
+              "ActionComponent": "Demo"
+            }
+          }
+        ]
+      },
+      {
+        "Name": "Demo",
+        "Components": [
+          {
+            "Type": "Box",
+            "Name": "background",
+            "Width": 800,
+            "Height": 480,
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "hw_input_value",
+            "Y": 147,
+            "Width": 800,
+            "Height": 156,
+            "TextId": "__SingleUse_VA5M",
+            "TextRotation": "0",
+            "Wildcard1": {
+              "TextId": "__SingleUse_9YCV",
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "hw_input",
+            "X": 360,
+            "Y": 146,
+            "Width": 71,
+            "Height": 38,
+            "TextId": "__SingleUse_I7I2",
+            "TextRotation": "0",
+            "AutoSize": true
+          },
+          {
+            "Type": "ButtonWithLabel",
+            "Name": "hw_output",
+            "X": 220,
+            "Y": 311,
+            "Width": 360,
+            "Height": 60,
+            "Pressed": "dark_button_pressed.png",
+            "Released": "dark_button.png",
+            "TextId": "__SingleUse_JX4Y",
+            "ReleasedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "PressedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "TextRotation": "0",
+            "Style": "Style2"
+          },
+          {
+            "Type": "Button",
+            "Name": "arrow_left",
+            "X": 6,
+            "Y": 224,
+            "Width": 16,
+            "Height": 16,
+            "Pressed": "arrow_left.png",
+            "Released": "arrow_left.png"
+          },
+          {
+            "Type": "Button",
+            "Name": "arrow_right",
+            "X": 776,
+            "Y": 224,
+            "Width": 16,
+            "Height": 16,
+            "Pressed": "arrow_right.png",
+            "Released": "arrow_right.png"
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "ButtonClicked",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "hw_output"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "buttonClicked"
+            }
+          },
+          {
+            "InteractionName": "GoBack",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "arrow_left"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionSlide",
+              "ScreenTransitionDirection": "West",
+              "ActionComponent": "Introduction"
+            }
+          },
+          {
+            "InteractionName": "GoForward",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "arrow_right"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionSlide",
+              "ScreenTransitionDirection": "East",
+              "ActionComponent": "Introduction"
+            }
+          }
+        ]
+      }
+    ],
+    "CustomContainerDefinitions": [
+      {
+        "Name": "LabelBox",
+        "Width": 200,
+        "Height": 80,
+        "Components": [
+          {
+            "Type": "Box",
+            "Name": "border",
+            "Width": 200,
+            "Height": 80
+          },
+          {
+            "Type": "Box",
+            "Name": "background",
+            "X": 1,
+            "Y": 1,
+            "Width": 198,
+            "Height": 78,
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "text",
+            "X": 1,
+            "Y": 1,
+            "Width": 198,
+            "Height": 79,
+            "TextId": "__SingleUse_FV8X",
+            "TextRotation": "0"
+          }
+        ],
+        "Interactions": []
+      }
+    ],
+    "Name": "MyApplication",
+    "Resolution": {
+      "Width": 800,
+      "Height": 480
+    },
+    "SelectedColorDepth": 16,
+    "StartupScreenName": "Introduction",
+    "SelectedStartupLanguage": "GB",
+    "Skin": "Blue",
+    "TouchGfxPath": "../Middlewares/ST/touchgfx",
+    "UIPath": ".",
+    "AvailableColorDepths": [
+      16
+    ],
+    "AvailableLCDs": {
+      "16": "LCD16bpp"
+    },
+    "AvailableSections": [
+      "ExtFlashSection",
+      "IntFlashSection"
+    ],
+    "AvailableResolutions": [
+      {
+        "Width": 800,
+        "Height": 480
+      }
+    ],
+    "PhysicalButtons": [],
+    "FrameworkFeatures": {
+      "LCD16bpp": {
+        "Id": "LCD16bpp",
+        "IsEnabled": true
+      }
+    },
+    "GenerateAssetsCommand": "make -f simulator/gcc/Makefile assets -j8",
+    "PostGenerateCommand": "touchgfx update_project --project-file=simulator/msvs/Application.vcxproj",
+    "PostGenerateTargetCommand": "touchgfx update_project --project-file=../H7_05TouchGFX.ioc --platform=m7",
+    "CompileSimulatorCommand": "make -f simulator/gcc/Makefile -j8",
+    "RunSimulatorCommand": "build\\bin\\simulator.exe",
+    "LandscapeSkinX": 0,
+    "LandscapeSkinY": 0,
+    "PortraitSkinX": 0,
+    "PortraitSkinY": 0,
+    "DisplayOrientation": "Landscape",
+    "Family": "STM32H7"
+  },
+  "Version": "4.18.0"
+}

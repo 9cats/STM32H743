@@ -1,5 +1,5 @@
 /Debug/
-CMSIS
-STM32H7xx_HAL_Driver
-//忽略CubeIDE(Eclipse)生成的文件
-.settings
+/Drivers/CMSIS
+/Drivers/STM32H7xx_HAL_Driver
+/.settings
+Middlewares

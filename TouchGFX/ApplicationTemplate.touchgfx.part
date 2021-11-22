@@ -1,0 +1,22 @@
+
+{
+  "Application": {
+    "Name": "H7_05TouchGFX",
+    "TouchGfxPath": "../Middlewares/ST/touchgfx",
+    "AvailableColorDepths": [ 16 ],
+    "AvailableLCDs":
+    {
+      "16": "LCD16bpp"
+    },
+    "AvailableResolutions" : [
+      {
+        "Width": 800,
+        "Height": 480
+      }
+    ],
+    "PostGenerateTargetCommand" : "touchgfx update_project --project-file=../H7_05TouchGFX.ioc --platform=m7",
+    "Family" : "STM32H7",
+    "SubFamily" : "STM32H743/753"
+  },
+  "Version": "4.17.0"
+}

@@ -19,6 +19,8 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
+#include "cmsis_os.h"
+#include "crc.h"
 #include "dma2d.h"
 #include "fatfs.h"
 #include "ltdc.h"
@@ -29,6 +31,7 @@
 #include "usb_device.h"
 #include "gpio.h"
 #include "fmc.h"
+#include "app_touchgfx.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
@@ -62,6 +65,7 @@
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
 void PeriphCommonClock_Config(void);
+void MX_FREERTOS_Init(void);
 /* USER CODE BEGIN PFP */
 /********************************************** 变量定义 *******************************************/
 
@@ -173,29 +177,18 @@ int main(void)
   MX_SDMMC1_SD_Init();
   MX_QUADSPI_Init();
   MX_FATFS_Init();
-  //MX_USB_DEVICE_Init();
+  MX_CRC_Init();
+  MX_TouchGFX_Init();
   /* USER CODE BEGIN 2 */
-  LCD_Init();
   Touch_Init();
-
-	LCD_SetColor(0xff333333);						//	设置画笔色，使用自定义颜色
-	LCD_SetBackColor(0xffB9EDF8); 			//	设置背景色，使用自定义颜色
-	LCD_Clear(); 												//	清屏，刷背景色
-
-	LCD_SetTextFont(&CH_Font32);
-	LCD_DisplayText( 42, 20,"电容触摸测试");
-	LCD_DisplayText( 42, 70,"核心板型号：FK743M1-IIT6");
-	LCD_DisplayText( 42, 120,"屏幕分辨率：800*480");
-
-	LCD_DisplayString(44, 170,"X1:       Y1:");
-	LCD_DisplayString(44, 220,"X2:       Y2:");
-	LCD_DisplayString(44, 270,"X3:       Y3:");
-	LCD_DisplayString(44, 320,"X4:       Y4:");
-	LCD_DisplayString(44, 370,"X5:       Y5:");
-
-	LCD_SetColor(LCD_RED);	//设置画笔颜色
   /* USER CODE END 2 */
 
+  /* Call init function for freertos objects (in freertos.c) */
+  MX_FREERTOS_Init();
+  /* Start scheduler */
+  osKernelStart();
+
+  /* We should never get here as control is now taken by the scheduler */
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
@@ -203,26 +196,6 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-		Touch_Scan();	// 触摸扫描
-
-		if(touchInfo.flag == 1)
-		{
-			LCD_DisplayNumber(110,170,touchInfo.x[0],4);	// 显示第1组坐标
-			LCD_DisplayNumber(260,170,touchInfo.y[0],4);
-
-			LCD_DisplayNumber(110,220,touchInfo.x[1],4);	// 显示第2组坐标
-			LCD_DisplayNumber(260,220,touchInfo.y[1],4);
-
-			LCD_DisplayNumber(110,270,touchInfo.x[2],4);	// 显示第3组坐标
-			LCD_DisplayNumber(260,270,touchInfo.y[2],4);
-
-			LCD_DisplayNumber(110,320,touchInfo.x[3],4);	// 显示第4组坐标
-			LCD_DisplayNumber(260,320,touchInfo.y[3],4);
-
-			LCD_DisplayNumber(110,370,touchInfo.x[4],4);	// 显示第5组坐标
-			LCD_DisplayNumber(260,370,touchInfo.y[4],4);
-		}
-		HAL_Delay(20);		// GT911触摸屏扫描间隔不能小于10ms，建议设置为20ms
   }
   /* USER CODE END 3 */
 }
@@ -316,6 +289,27 @@ void PeriphCommonClock_Config(void)
 /* USER CODE BEGIN 4 */
 
 /* USER CODE END 4 */
+
+/**
+  * @brief  Period elapsed callback in non blocking mode
+  * @note   This function is called  when TIM7 interrupt took place, inside
+  * HAL_TIM_IRQHandler(). It makes a direct call to HAL_IncTick() to increment
+  * a global variable "uwTick" used as application time base.
+  * @param  htim : TIM handle
+  * @retval None
+  */
+void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
+{
+  /* USER CODE BEGIN Callback 0 */
+
+  /* USER CODE END Callback 0 */
+  if (htim->Instance == TIM7) {
+    HAL_IncTick();
+  }
+  /* USER CODE BEGIN Callback 1 */
+
+  /* USER CODE END Callback 1 */
+}
 
 /**
   * @brief  This function is executed in case of error occurrence.
