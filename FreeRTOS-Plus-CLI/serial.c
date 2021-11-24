@@ -182,16 +182,15 @@ void USART1_IRQHandler(void)
 			xQueueSendFromISR(xRxedChars, &aRxBuffer[i], &pxHigherPriorityTaskWoken);
 		}
 		recv_end_flag = 1;
+
+		HAL_UART_Receive_DMA(&huart1, aRxBuffer, RxBuffer_MAX);
 	}
-	if(recv_end_flag == 1)
+	else if(recv_end_flag == 1)
 	{
 		for(i=0;i<recv_end_length;i++)aRxBuffer[i] = 0;
 		recv_end_length = 0;
 		recv_end_flag   = 0;
 	}
-	HAL_UART_DMAStop(&huart1);
-	HAL_UART_Receive_DMA(&huart1, aRxBuffer, RxBuffer_MAX);
-	HAL_UART_IRQHandler(&huart1);
 	portYIELD_FROM_ISR(pxHigherPriorityTaskWoken);
 }
 

@@ -1,0 +1,5 @@
+
+
+void core_learn()
+{
+}
