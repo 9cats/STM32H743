@@ -21,7 +21,7 @@
 #include "quadspi.h"
 
 /* USER CODE BEGIN 0 */
-
+#include "W25QXX.h"
 /* USER CODE END 0 */
 
 QSPI_HandleTypeDef hqspi;
@@ -31,7 +31,8 @@ void MX_QUADSPI_Init(void)
 {
 
   /* USER CODE BEGIN QUADSPI_Init 0 */
-
+  hqspi.Instance = QUADSPI;
+  HAL_QSPI_DeInit(&hqspi);
   /* USER CODE END QUADSPI_Init 0 */
 
   /* USER CODE BEGIN QUADSPI_Init 1 */
@@ -51,8 +52,8 @@ void MX_QUADSPI_Init(void)
     Error_Handler();
   }
   /* USER CODE BEGIN QUADSPI_Init 2 */
-  extern void QSPI_W25Qxx_Init(void);
   QSPI_W25Qxx_Init();
+  QSPI_W25Qxx_MemoryMappedMode();
   /* USER CODE END QUADSPI_Init 2 */
 
 }

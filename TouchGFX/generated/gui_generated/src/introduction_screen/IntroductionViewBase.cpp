@@ -15,13 +15,13 @@ IntroductionViewBase::IntroductionViewBase()
     background.setPosition(0, 0, 800, 480);
     background.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
 
-    headline.setPosition(0, 73, 800, 298);
+    headline.setPosition(0, 91, 800, 298);
     headline.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     headline.setLinespacing(0);
-    headline.setTypedText(touchgfx::TypedText(T_INTRODUCTION));
+    headline.setTypedText(touchgfx::TypedText(T_DEMO));
 
     arrow_left.setXY(6, 224);
-    arrow_left.setBitmap(touchgfx::Bitmap(BITMAP_ARROW_LEFT_ID));
+    arrow_left.setBitmap(touchgfx::Bitmap(BITMAP_ARROW_RIGHT_ID));
 
     arrow_right.setXY(776, 224);
     arrow_right.setBitmap(touchgfx::Bitmap(BITMAP_ARROW_RIGHT_ID));

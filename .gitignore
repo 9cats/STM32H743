@@ -3,3 +3,4 @@
 /Drivers/STM32H7xx_HAL_Driver
 /.settings
 Middlewares
+/QSPI_W25Q64_Program/

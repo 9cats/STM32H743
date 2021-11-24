@@ -18,10 +18,10 @@
           {
             "Type": "TextArea",
             "Name": "headline",
-            "Y": 73,
+            "Y": 91,
             "Width": 800,
             "Height": 298,
-            "TextId": "introduction",
+            "TextId": "demo",
             "TextRotation": "0",
             "Fadeable": true,
             "Moveable": true
@@ -33,7 +33,7 @@
             "Y": 224,
             "Width": 16,
             "Height": 16,
-            "RelativeFilename": "arrow_left.png"
+            "RelativeFilename": "arrow_right.png"
           },
           {
             "Type": "Image",
