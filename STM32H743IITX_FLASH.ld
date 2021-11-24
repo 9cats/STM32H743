@@ -174,6 +174,13 @@ SECTIONS
 
   .ARM.attributes 0 : { *(.ARM.attributes) }
   
+  /* add _dma_data */
+  ._dma_data :
+  {
+    . = ALIGN(4);
+    . = ALIGN(4);
+  } >RAM_D3
+  
   ExtFlashSection :
   {
     *(ExtFlashSection ExtFlashSection.*)

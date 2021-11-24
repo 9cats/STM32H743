@@ -66,6 +66,23 @@ void StartDefaultTask(void *argument);
 extern void MX_USB_DEVICE_Init(void);
 void MX_FREERTOS_Init(void); /* (MISRA C 2004 rule 8.1) */
 
+/* Hook prototypes */
+void configureTimerForRunTimeStats(void);
+unsigned long getRunTimeCounterValue(void);
+
+/* USER CODE BEGIN 1 */
+/* Functions needed when configGENERATE_RUN_TIME_STATS is on */
+__weak void configureTimerForRunTimeStats(void)
+{
+
+}
+
+__weak unsigned long getRunTimeCounterValue(void)
+{
+return 0;
+}
+/* USER CODE END 1 */
+
 /**
   * @brief  FreeRTOS initialization
   * @param  None
@@ -73,7 +90,10 @@ void MX_FREERTOS_Init(void); /* (MISRA C 2004 rule 8.1) */
   */
 void MX_FREERTOS_Init(void) {
   /* USER CODE BEGIN Init */
-
+  extern void vUARTCommandConsoleStart( uint16_t usStackSize, UBaseType_t uxPriority );
+  extern void vRegisterSampleCLICommands( void );
+  vRegisterSampleCLICommands();
+  vUARTCommandConsoleStart(512,osPriorityBelowNormal7);
   /* USER CODE END Init */
 
   /* USER CODE BEGIN RTOS_MUTEX */
