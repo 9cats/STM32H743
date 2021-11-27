@@ -129,11 +129,11 @@ void FatFs_Check(void)	//判断FatFs是否挂载成功，若没有创建FatFs则格式化SD卡
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-int __io_putchar(int ch)
-{
-	HAL_UART_Transmit(&huart1, (uint8_t*)&ch, 1, 0xFFFFFFFF);
-	return ch;
-}
+//int __io_putchar(int ch)
+//{
+//	HAL_UART_Transmit(&huart1, (uint8_t*)&ch, 1, 0xFFFFFFFF);
+//	return ch;
+//}
 /* USER CODE END 0 */
 
 /**
@@ -185,6 +185,7 @@ int main(void)
   MX_QUADSPI_Init();
   MX_FATFS_Init();
   MX_CRC_Init();
+  MX_TIM6_Init();
   MX_TouchGFX_Init();
   /* USER CODE BEGIN 2 */
   Touch_Init();

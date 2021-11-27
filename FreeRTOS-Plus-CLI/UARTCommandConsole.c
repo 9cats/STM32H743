@@ -45,11 +45,11 @@
 #include "serial.h"
 
 /* Dimensions the buffer into which input characters are placed. */
-#define cmdMAX_INPUT_SIZE		50
+#define cmdMAX_INPUT_SIZE		100
 
 /* Dimentions a buffer to be used by the UART driver, if the UART driver uses a
 buffer at all. */
-#define cmdQUEUE_LENGTH			25
+#define cmdQUEUE_LENGTH			60
 
 /* DEL acts as a backspace. */
 #define cmdASCII_DEL		( 0x7F )

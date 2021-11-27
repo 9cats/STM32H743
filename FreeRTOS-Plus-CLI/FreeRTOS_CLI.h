@@ -53,7 +53,7 @@ typedef struct xCOMMAND_LINE_INPUT
 
 /* For backward compatibility. */
 #define xCommandLineInput CLI_Command_Definition_t
-#define configCOMMAND_INT_MAX_OUTPUT_SIZE 512
+#define configCOMMAND_INT_MAX_OUTPUT_SIZE 4096  /* The Size of Console Tx Buffer Size MAX */
 /*
  * Register the command passed in using the pxCommandToRegister parameter.
  * Registering a command adds the command to the list of commands that are

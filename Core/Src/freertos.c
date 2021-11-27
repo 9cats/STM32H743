@@ -92,8 +92,10 @@ void MX_FREERTOS_Init(void) {
   /* USER CODE BEGIN Init */
   extern void vUARTCommandConsoleStart( uint16_t usStackSize, UBaseType_t uxPriority );
   extern void vRegisterSampleCLICommands( void );
-  vRegisterSampleCLICommands();
-  vUARTCommandConsoleStart(512,osPriorityBelowNormal7);
+  extern void vRegisterMineCommands(void);
+  //vRegisterSampleCLICommands();
+  vRegisterMineCommands();
+  vUARTCommandConsoleStart(4096,osPriorityBelowNormal);
   /* USER CODE END Init */
 
   /* USER CODE BEGIN RTOS_MUTEX */
@@ -118,6 +120,8 @@ void MX_FREERTOS_Init(void) {
 
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
+  extern void mytask_creat(void);
+  mytask_creat();
   /* USER CODE END RTOS_THREADS */
 
   /* USER CODE BEGIN RTOS_EVENTS */
