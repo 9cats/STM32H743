@@ -17,20 +17,20 @@
     <ClCompile Include="$(TouchGFXReleasePath)\framework\source\platform\hal\simulator\sdl2\OSWrappers.cpp"/>
     <ClCompile Include="$(ApplicationRoot)\simulator\main.cpp"/>
     <ClCompile Include="$(ApplicationRoot)\generated\simulator\src\mainBase.cpp"/>
-    <ClCompile Include="..\..\gui\src\demo_screen\DemoPresenter.cpp"/>
-    <ClCompile Include="..\..\gui\src\demo_screen\DemoView.cpp"/>
-    <ClCompile Include="..\..\generated\gui_generated\src\demo_screen\DemoViewBase.cpp"/>
     <ClCompile Include="..\..\gui\src\model\FakeHardware.cpp"/>
     <ClCompile Include="..\..\gui\src\common\FrontendApplication.cpp"/>
     <ClCompile Include="..\..\generated\gui_generated\src\common\FrontendApplicationBase.cpp"/>
-    <ClCompile Include="..\..\gui\src\introduction_screen\IntroductionPresenter.cpp"/>
-    <ClCompile Include="..\..\gui\src\introduction_screen\IntroductionView.cpp"/>
-    <ClCompile Include="..\..\generated\gui_generated\src\introduction_screen\IntroductionViewBase.cpp"/>
     <ClCompile Include="..\..\gui\src\containers\LabelBox.cpp"/>
     <ClCompile Include="..\..\generated\gui_generated\src\containers\LabelBoxBase.cpp"/>
     <ClCompile Include="..\..\gui\src\model\Model.cpp"/>
     <ClCompile Include="..\..\gui\include\gui\model\ModelListener.cpp"/>
     <ClCompile Include="..\..\generated\simulator\src\video\SoftwareMJPEGDecoder.cpp"/>
+    <ClCompile Include="..\..\gui\src\mainmenu_screen\MainMenuPresenter.cpp"/>
+    <ClCompile Include="..\..\gui\src\mainmenu_screen\MainMenuView.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\mainmenu_screen\MainMenuViewBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\oscilloscope_screen\OscilloscopePresenter.cpp"/>
+    <ClCompile Include="..\..\gui\src\oscilloscope_screen\OscilloscopeView.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\oscilloscope_screen\OscilloscopeViewBase.cpp"/>
   </ItemGroup>
   <ItemGroup>
     <None Include="$(ApplicationRoot)\assets\texts\texts.xml"/>
@@ -171,18 +171,12 @@
     <ClInclude Include="$(TouchGFXReleasePath)\framework\include\touchgfx\widgets\TouchArea.hpp"/>
     <ClInclude Include="$(TouchGFXReleasePath)\framework\include\touchgfx\widgets\Widget.hpp"/>
     <ClInclude Include="$(ApplicationRoot)\generated\simulator\include\simulator\mainBase.hpp"/>
-    <ClInclude Include="..\..\gui\include\gui\demo_screen\DemoPresenter.hpp"/>
-    <ClInclude Include="..\..\gui\include\gui\demo_screen\DemoView.hpp"/>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\demo_screen\DemoViewBase.hpp"/>
     <ClInclude Include="..\..\generated\simulator\include\simulator\video\DirectFrameBufferVideoController.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\model\FakeHardware.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\common\FrontendApplication.hpp"/>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\common\FrontendApplicationBase.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\common\FrontendHeap.hpp"/>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\common\FrontendHeapBase.hpp"/>
-    <ClInclude Include="..\..\gui\include\gui\introduction_screen\IntroductionPresenter.hpp"/>
-    <ClInclude Include="..\..\gui\include\gui\introduction_screen\IntroductionView.hpp"/>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\introduction_screen\IntroductionViewBase.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\containers\LabelBox.hpp"/>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\LabelBoxBase.hpp"/>
     <ClInclude Include="..\..\generated\simulator\include\simulator\video\MJPEGDecoder.hpp"/>
@@ -190,6 +184,12 @@
     <ClInclude Include="..\..\gui\include\gui\model\ModelListener.hpp"/>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\common\SimConstants.hpp"/>
     <ClInclude Include="..\..\generated\simulator\include\simulator\video\SoftwareMJPEGDecoder.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\mainmenu_screen\MainMenuPresenter.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\mainmenu_screen\MainMenuView.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\mainmenu_screen\MainMenuViewBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\oscilloscope_screen\OscilloscopePresenter.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\oscilloscope_screen\OscilloscopeView.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\oscilloscope_screen\OscilloscopeViewBase.hpp"/>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="$(ApplicationRoot)\generated\simulator\touchgfx.rc"/>

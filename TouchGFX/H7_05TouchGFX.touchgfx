@@ -2,113 +2,193 @@
   "Application": {
     "Screens": [
       {
-        "Name": "Introduction",
+        "Name": "MainMenu",
         "Components": [
           {
-            "Type": "Box",
-            "Name": "background",
-            "Width": 800,
-            "Height": 480,
-            "Color": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            }
+            "Type": "ScalableImage",
+            "Name": "biter",
+            "Width": 400,
+            "Height": 400,
+            "Filename": "i44.png",
+            "ScalingAlgorithm": "Bilinear Interpolation"
+          },
+          {
+            "Type": "ToggleButton",
+            "Name": "toggleButton",
+            "X": 336,
+            "Y": 442,
+            "Width": 128,
+            "Height": 38,
+            "Pressed": "__designer\\Blue_Togglebars_Toggle_round_large_button_ON.png",
+            "Released": "__designer\\Blue_Togglebars_Toggle_round_large_button_OFF.png",
+            "Style": "Style4"
           },
           {
             "Type": "TextArea",
-            "Name": "headline",
-            "Y": 91,
-            "Width": 800,
-            "Height": 298,
-            "TextId": "demo",
+            "Name": "bitworkshop",
+            "X": 333,
+            "Width": 131,
+            "Height": 20,
+            "TextId": "__SingleUse_GZO2",
             "TextRotation": "0",
-            "Fadeable": true,
-            "Moveable": true
-          },
-          {
-            "Type": "Image",
-            "Name": "arrow_left",
-            "X": 6,
-            "Y": 224,
-            "Width": 16,
-            "Height": 16,
-            "RelativeFilename": "arrow_right.png"
-          },
-          {
-            "Type": "Image",
-            "Name": "arrow_right",
-            "X": 776,
-            "Y": 224,
-            "Width": 16,
-            "Height": 16,
-            "RelativeFilename": "arrow_right.png"
+            "AutoSize": true
           }
         ],
         "Interactions": [
           {
-            "InteractionName": "Interaction1",
+            "InteractionName": "ToggleButtonClicked",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "toggleButton"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "ToggleButtonClicked"
+            }
+          },
+          {
+            "InteractionName": "test1",
             "Trigger": {
               "Type": "TriggerPhysicalButtonClicked"
             },
             "Action": {
-              "Type": "ActionGotoScreen",
-              "ScreenTransitionType": "ScreenTransitionSlide",
-              "ScreenTransitionDirection": "West",
-              "ActionComponent": "Demo"
+              "Type": "ActionMove",
+              "Easing": "Sine",
+              "EasingOption": "In",
+              "Duration": 1200,
+              "ActionComponent": "biter"
             }
           }
         ]
       },
       {
-        "Name": "Demo",
+        "Name": "Oscilloscope",
+        "CanvasBufferSize": 12000,
         "Components": [
           {
-            "Type": "Box",
-            "Name": "background",
-            "Width": 800,
-            "Height": 480,
+            "Type": "Line",
+            "Name": "line_y",
+            "X": 400,
+            "Y": 28,
+            "Width": 15,
+            "Height": 374,
+            "LockPosition": true,
             "Color": {
               "Red": 255,
               "Green": 255,
               "Blue": 255
-            }
+            },
+            "EndY": 500,
+            "LineWidth": 3,
+            "LineEndingStyle": "Round"
           },
           {
-            "Type": "TextArea",
-            "Name": "hw_input_value",
-            "Y": 147,
-            "Width": 800,
-            "Height": 156,
-            "TextId": "__SingleUse_VA5M",
-            "TextRotation": "0",
-            "Wildcard1": {
-              "TextId": "__SingleUse_9YCV",
-              "UseBuffer": true,
-              "BufferSize": 10
-            }
+            "Type": "Line",
+            "Name": "line_x",
+            "X": 25,
+            "Y": 214,
+            "Width": 750,
+            "Height": 15,
+            "LockPosition": true,
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "EndX": 754,
+            "LineWidth": 3,
+            "LineEndingStyle": "Round"
           },
           {
-            "Type": "TextArea",
-            "Name": "hw_input",
-            "X": 360,
-            "Y": 146,
-            "Width": 71,
-            "Height": 38,
-            "TextId": "__SingleUse_I7I2",
-            "TextRotation": "0",
-            "AutoSize": true
+            "Type": "BoxWithBorder",
+            "Name": "boxWithBorder1",
+            "X": 23,
+            "Y": 26,
+            "Width": 754,
+            "Height": 378,
+            "LockPosition": true,
+            "BorderColor": {
+              "Red": 58,
+              "Green": 58,
+              "Blue": 176
+            },
+            "BorderSize": 2,
+            "Alpha": 131
+          },
+          {
+            "Type": "DynamicGraph",
+            "Name": "dynamicGraph1",
+            "X": 25,
+            "Y": 28,
+            "Width": 750,
+            "Height": 374,
+            "LockPosition": true,
+            "DataSeed": -891467431,
+            "NumberOfValues": 251,
+            "MaxY": 100.0,
+            "MinY": -100.0,
+            "Precision": "1",
+            "LastIndex": 250,
+            "XAxisScale": 1.0,
+            "InsertRandomValues": true,
+            "GraphType": "GraphWrapClear",
+            "GraphDrawers": [
+              {
+                "Type": "LineDrawer",
+                "LineWidth": 2,
+                "Color": {
+                  "Red": 184,
+                  "Green": 7,
+                  "Blue": 166
+                }
+              }
+            ],
+            "XAxisGrid": {
+              "Type": "GraphGrid",
+              "Color": {
+                "Red": 109,
+                "Green": 138,
+                "Blue": 148
+              },
+              "Interval": 25.0,
+              "LineWidth": 1,
+              "Alpha": 79
+            },
+            "YAxisGrid": {
+              "Type": "GraphGrid",
+              "Color": {
+                "Red": 109,
+                "Green": 138,
+                "Blue": 148
+              },
+              "Interval": 25.0,
+              "LineWidth": 1,
+              "Alpha": 79
+            },
+            "XAxisLabel": {
+              "Type": "GraphLabel",
+              "Interval": 25.0,
+              "DecimalSeparator": "Point",
+              "TextColor": {
+                "Red": 20,
+                "Green": 151,
+                "Blue": 197
+              },
+              "TextId": "__SingleUse_2OM6",
+              "TextRotation": "0",
+              "Position": "Bottom"
+            }
           },
           {
             "Type": "ButtonWithLabel",
-            "Name": "hw_output",
-            "X": 220,
-            "Y": 311,
-            "Width": 360,
+            "Name": "buttonWithLabel1",
+            "X": 605,
+            "Y": 404,
+            "Width": 170,
             "Height": 60,
-            "Pressed": "dark_button_pressed.png",
-            "Released": "dark_button.png",
-            "TextId": "__SingleUse_JX4Y",
+            "Pressed": "__designer\\Blue_Buttons_Round_small_pressed.png",
+            "Released": "__designer\\Blue_Buttons_Round_small.png",
+            "TextId": "__SingleUse_QIC3",
             "ReleasedColor": {
               "Red": 255,
               "Green": 255,
@@ -120,65 +200,61 @@
               "Blue": 255
             },
             "TextRotation": "0",
-            "Style": "Style2"
+            "Style": "Style8"
           },
           {
-            "Type": "Button",
-            "Name": "arrow_left",
-            "X": 6,
-            "Y": 224,
-            "Width": 16,
-            "Height": 16,
-            "Pressed": "arrow_left.png",
-            "Released": "arrow_left.png"
+            "Type": "ButtonWithLabel",
+            "Name": "buttonWithLabel2",
+            "X": 25,
+            "Y": 404,
+            "Width": 60,
+            "Height": 60,
+            "Pressed": "__designer\\Blue_Buttons_Round_icon_button_pressed.png",
+            "Released": "__designer\\Blue_Buttons_Round_icon_button.png",
+            "TextId": "__SingleUse_BVBT",
+            "ReleasedColor": {
+              "Red": 201
+            },
+            "PressedColor": {
+              "Red": 186,
+              "Green": 13,
+              "Blue": 13
+            },
+            "TextRotation": "0",
+            "Style": "Style5"
           },
           {
-            "Type": "Button",
-            "Name": "arrow_right",
-            "X": 776,
-            "Y": 224,
-            "Width": 16,
-            "Height": 16,
-            "Pressed": "arrow_right.png",
-            "Released": "arrow_right.png"
+            "Type": "TextArea",
+            "Name": "ad_box",
+            "X": 341,
+            "Y": 430,
+            "Width": 94,
+            "Height": 20,
+            "TextId": "__SingleUse_VVGH",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "__SingleUse_I6VI",
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
           }
         ],
         "Interactions": [
           {
-            "InteractionName": "ButtonClicked",
+            "InteractionName": "sample",
             "Trigger": {
               "Type": "TriggerClicked",
-              "TriggerComponent": "hw_output"
+              "TriggerComponent": "buttonWithLabel2"
             },
             "Action": {
               "Type": "ActionCustom",
-              "FunctionName": "buttonClicked"
-            }
-          },
-          {
-            "InteractionName": "GoBack",
-            "Trigger": {
-              "Type": "TriggerClicked",
-              "TriggerComponent": "arrow_left"
-            },
-            "Action": {
-              "Type": "ActionGotoScreen",
-              "ScreenTransitionType": "ScreenTransitionSlide",
-              "ScreenTransitionDirection": "West",
-              "ActionComponent": "Introduction"
-            }
-          },
-          {
-            "InteractionName": "GoForward",
-            "Trigger": {
-              "Type": "TriggerClicked",
-              "TriggerComponent": "arrow_right"
-            },
-            "Action": {
-              "Type": "ActionGotoScreen",
-              "ScreenTransitionType": "ScreenTransitionSlide",
-              "ScreenTransitionDirection": "East",
-              "ActionComponent": "Introduction"
+              "FunctionName": "sample"
             }
           }
         ]
@@ -229,7 +305,7 @@
       "Height": 480
     },
     "SelectedColorDepth": 16,
-    "StartupScreenName": "Introduction",
+    "StartupScreenName": "Oscilloscope",
     "SelectedStartupLanguage": "GB",
     "Skin": "Blue",
     "TouchGfxPath": "../Middlewares/ST/touchgfx",

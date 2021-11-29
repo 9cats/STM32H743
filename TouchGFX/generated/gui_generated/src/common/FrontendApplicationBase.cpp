@@ -9,10 +9,10 @@
 #include <touchgfx/Texts.hpp>
 #include <touchgfx/hal/HAL.hpp>
 #include <platform/driver/lcd/LCD16bpp.hpp>
-#include <gui/introduction_screen/IntroductionView.hpp>
-#include <gui/introduction_screen/IntroductionPresenter.hpp>
-#include <gui/demo_screen/DemoView.hpp>
-#include <gui/demo_screen/DemoPresenter.hpp>
+#include <gui/mainmenu_screen/MainMenuView.hpp>
+#include <gui/mainmenu_screen/MainMenuPresenter.hpp>
+#include <gui/oscilloscope_screen/OscilloscopeView.hpp>
+#include <gui/oscilloscope_screen/OscilloscopePresenter.hpp>
 
 using namespace touchgfx;
 
@@ -31,50 +31,15 @@ FrontendApplicationBase::FrontendApplicationBase(Model& m, FrontendHeap& heap)
  * Screen Transition Declarations
  */
 
-// Introduction
+// Oscilloscope
 
-void FrontendApplicationBase::gotoIntroductionScreenNoTransition()
+void FrontendApplicationBase::gotoOscilloscopeScreenNoTransition()
 {
-    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplication::gotoIntroductionScreenNoTransitionImpl);
+    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplication::gotoOscilloscopeScreenNoTransitionImpl);
     pendingScreenTransitionCallback = &transitionCallback;
 }
 
-void FrontendApplicationBase::gotoIntroductionScreenNoTransitionImpl()
+void FrontendApplicationBase::gotoOscilloscopeScreenNoTransitionImpl()
 {
-    touchgfx::makeTransition<IntroductionView, IntroductionPresenter, touchgfx::NoTransition, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
-}
-
-void FrontendApplicationBase::gotoIntroductionScreenSlideTransitionWest()
-{
-    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplication::gotoIntroductionScreenSlideTransitionWestImpl);
-    pendingScreenTransitionCallback = &transitionCallback;
-}
-
-void FrontendApplicationBase::gotoIntroductionScreenSlideTransitionWestImpl()
-{
-    touchgfx::makeTransition<IntroductionView, IntroductionPresenter, touchgfx::SlideTransition<WEST>, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
-}
-
-void FrontendApplicationBase::gotoIntroductionScreenSlideTransitionEast()
-{
-    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplication::gotoIntroductionScreenSlideTransitionEastImpl);
-    pendingScreenTransitionCallback = &transitionCallback;
-}
-
-void FrontendApplicationBase::gotoIntroductionScreenSlideTransitionEastImpl()
-{
-    touchgfx::makeTransition<IntroductionView, IntroductionPresenter, touchgfx::SlideTransition<EAST>, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
-}
-
-// Demo
-
-void FrontendApplicationBase::gotoDemoScreenSlideTransitionWest()
-{
-    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplication::gotoDemoScreenSlideTransitionWestImpl);
-    pendingScreenTransitionCallback = &transitionCallback;
-}
-
-void FrontendApplicationBase::gotoDemoScreenSlideTransitionWestImpl()
-{
-    touchgfx::makeTransition<DemoView, DemoPresenter, touchgfx::SlideTransition<WEST>, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
+    touchgfx::makeTransition<OscilloscopeView, OscilloscopePresenter, touchgfx::NoTransition, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
 }

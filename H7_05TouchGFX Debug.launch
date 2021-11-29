@@ -41,7 +41,7 @@
     <booleanAttribute key="com.st.stm32cube.ide.mcu.debug.stlink.enable_logging" value="false"/>
     <booleanAttribute key="com.st.stm32cube.ide.mcu.debug.stlink.enable_max_halt_delay" value="false"/>
     <booleanAttribute key="com.st.stm32cube.ide.mcu.debug.stlink.enable_shared_stlink" value="false"/>
-    <stringAttribute key="com.st.stm32cube.ide.mcu.debug.stlink.external_loader" value="W25Q64_STM32H743, 0x90000000, SPI_FLASH, W25Q64_STM32H743.stldr"/>
+    <stringAttribute key="com.st.stm32cube.ide.mcu.debug.stlink.external_loader" value="W25Q64_STM32H743VI, 0x90000000, NOR_FLASH, STM32H743VI_W25Q64.stldr"/>
     <booleanAttribute key="com.st.stm32cube.ide.mcu.debug.stlink.external_loader_init" value="false"/>
     <stringAttribute key="com.st.stm32cube.ide.mcu.debug.stlink.frequency" value="0"/>
     <booleanAttribute key="com.st.stm32cube.ide.mcu.debug.stlink.halt_all_on_reset" value="false"/>

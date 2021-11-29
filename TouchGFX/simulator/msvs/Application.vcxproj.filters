@@ -136,23 +136,14 @@
     <Filter Include="Header Files\gui">
       <UniqueIdentifier>A1EC52DF-324E-ABF0-CA96-134BCF78E07D</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\gui\introduction_screen">
-      <UniqueIdentifier>A28B0DA0-1DFB-A1C6-4D2C-541BD20474AB</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\generated\gui_generated">
       <UniqueIdentifier>B98A0701-3A8E-58FA-5C4D-1536CAB78B94</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\gui\introduction_screen">
-      <UniqueIdentifier>59869DA4-BBE5-6643-A9CD-D1AF2C6E333A</UniqueIdentifier>
     </Filter>
     <Filter Include="Header Files\generated\gui_generated">
       <UniqueIdentifier>1F5AD381-2603-A430-EAC6-9445F490DC77</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files\gui\containers">
       <UniqueIdentifier>94A38282-D432-3D95-44A9-5F77104D1A0D</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\gui\demo_screen">
-      <UniqueIdentifier>15AC7590-2106-C3EE-F4BA-D95332CC3204</UniqueIdentifier>
     </Filter>
     <Filter Include="Header Files\gui\containers">
       <UniqueIdentifier>C1624C28-6397-D9D0-B726-E55055D82F1A</UniqueIdentifier>
@@ -162,9 +153,6 @@
     </Filter>
     <Filter Include="Header Files\gui\common">
       <UniqueIdentifier>75E88B86-3936-B992-75EE-50CE491C1CF4</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\gui\demo_screen">
-      <UniqueIdentifier>DFE30064-3C1E-C4FC-926C-77B998B564B0</UniqueIdentifier>
     </Filter>
     <Filter Include="Header Files\gui\model">
       <UniqueIdentifier>773CC18C-688E-CD78-8FC9-A057C2C8C822</UniqueIdentifier>
@@ -181,23 +169,11 @@
     <Filter Include="Source Files\generated\gui_generated\containers">
       <UniqueIdentifier>449231DB-1A6B-C368-7112-0B058307BD84</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\generated\gui_generated\demo_screen">
-      <UniqueIdentifier>16C09DFC-006A-90F3-152C-371DD29532FD</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\generated\gui_generated\introduction_screen">
-      <UniqueIdentifier>EA1BF508-BBF2-732A-89B2-2CC0F35F9BDD</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\generated\gui_generated\demo_screen">
-      <UniqueIdentifier>6C3E44D4-8FED-E3D9-5AF4-ACF1D56760EE</UniqueIdentifier>
-    </Filter>
     <Filter Include="Header Files\generated\gui_generated\common">
       <UniqueIdentifier>5960D7F2-28E7-A851-EE15-BCC0674ADFAC</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files\generated\gui_generated\common">
       <UniqueIdentifier>5DA96BF4-DA18-A228-5F7F-D1E0C4820022</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\generated\gui_generated\introduction_screen">
-      <UniqueIdentifier>9B4AE478-D6B1-1D95-D49D-DF4DC2245B1E</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files\generated\simulator\video">
       <UniqueIdentifier>01D64431-915B-9CE1-9AE1-AC85D489A3F1</UniqueIdentifier>
@@ -207,6 +183,30 @@
     </Filter>
     <Filter Include="Header Files\generated\simulator\include\simulator\video">
       <UniqueIdentifier>0529CFAD-AB66-193A-D1FF-3DD94A67A034</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\mainmenu_screen">
+      <UniqueIdentifier>BD23A781-0401-4993-F239-9924D2884D55</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\mainmenu_screen">
+      <UniqueIdentifier>7727CA2B-84C6-6CF5-CDBC-69AD6BA945C0</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\mainmenu_screen">
+      <UniqueIdentifier>BF8CD84F-A773-C397-FF7D-FEE55941D0E7</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\mainmenu_screen">
+      <UniqueIdentifier>F6DA2ABD-5ECA-693A-0BBD-96994AB92FB1</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\oscilloscope_screen">
+      <UniqueIdentifier>F6B2C7E0-6CB6-3699-744A-2B378C9319CF</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\oscilloscope_screen">
+      <UniqueIdentifier>E00C7318-29F2-E420-B069-8F3BEAE51C45</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\oscilloscope_screen">
+      <UniqueIdentifier>1694E047-518C-7796-A500-70711009D8FE</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\oscilloscope_screen">
+      <UniqueIdentifier>712D1372-4010-78A6-8F57-6007F7C9DA4E</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -228,15 +228,6 @@
     <ClCompile Include="$(ApplicationRoot)\generated\simulator\src\mainBase.cpp">
       <Filter>Source Files\generated\simulator</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\gui\src\demo_screen\DemoPresenter.cpp">
-      <Filter>Source Files\gui\demo_screen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\gui\src\demo_screen\DemoView.cpp">
-      <Filter>Source Files\gui\demo_screen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\generated\gui_generated\src\demo_screen\DemoViewBase.cpp">
-      <Filter>Source Files\generated\gui_generated\demo_screen</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\gui\src\model\FakeHardware.cpp">
       <Filter>Source Files\gui\model</Filter>
     </ClCompile>
@@ -245,15 +236,6 @@
     </ClCompile>
     <ClCompile Include="..\..\generated\gui_generated\src\common\FrontendApplicationBase.cpp">
       <Filter>Source Files\generated\gui_generated\common</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\gui\src\introduction_screen\IntroductionPresenter.cpp">
-      <Filter>Source Files\gui\introduction_screen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\gui\src\introduction_screen\IntroductionView.cpp">
-      <Filter>Source Files\gui\introduction_screen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\generated\gui_generated\src\introduction_screen\IntroductionViewBase.cpp">
-      <Filter>Source Files\generated\gui_generated\introduction_screen</Filter>
     </ClCompile>
     <ClCompile Include="..\..\gui\src\containers\LabelBox.cpp">
       <Filter>Source Files\gui\containers</Filter>
@@ -269,6 +251,24 @@
     </ClCompile>
     <ClCompile Include="..\..\generated\simulator\src\video\SoftwareMJPEGDecoder.cpp">
       <Filter>Source Files\generated\simulator\video</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\mainmenu_screen\MainMenuPresenter.cpp">
+      <Filter>Source Files\gui\mainmenu_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\mainmenu_screen\MainMenuView.cpp">
+      <Filter>Source Files\gui\mainmenu_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\mainmenu_screen\MainMenuViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\mainmenu_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\oscilloscope_screen\OscilloscopePresenter.cpp">
+      <Filter>Source Files\gui\oscilloscope_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\oscilloscope_screen\OscilloscopeView.cpp">
+      <Filter>Source Files\gui\oscilloscope_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\oscilloscope_screen\OscilloscopeViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\oscilloscope_screen</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -682,15 +682,6 @@
     <ClInclude Include="$(ApplicationRoot)\generated\simulator\include\simulator\mainBase.hpp">
       <Filter>Header Files\generated\simulator</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\demo_screen\DemoPresenter.hpp">
-      <Filter>Header Files\gui\demo_screen</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\demo_screen\DemoView.hpp">
-      <Filter>Header Files\gui\demo_screen</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\demo_screen\DemoViewBase.hpp">
-      <Filter>Header Files\generated\gui_generated\demo_screen</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\generated\simulator\include\simulator\video\DirectFrameBufferVideoController.hpp">
       <Filter>Header Files\generated\simulator\include\simulator\video</Filter>
     </ClInclude>
@@ -708,15 +699,6 @@
     </ClInclude>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\common\FrontendHeapBase.hpp">
       <Filter>Header Files\generated\gui_generated\common</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\introduction_screen\IntroductionPresenter.hpp">
-      <Filter>Header Files\gui\introduction_screen</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\introduction_screen\IntroductionView.hpp">
-      <Filter>Header Files\gui\introduction_screen</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\introduction_screen\IntroductionViewBase.hpp">
-      <Filter>Header Files\generated\gui_generated\introduction_screen</Filter>
     </ClInclude>
     <ClInclude Include="..\..\gui\include\gui\containers\LabelBox.hpp">
       <Filter>Header Files\gui\containers</Filter>
@@ -738,6 +720,24 @@
     </ClInclude>
     <ClInclude Include="..\..\generated\simulator\include\simulator\video\SoftwareMJPEGDecoder.hpp">
       <Filter>Header Files\generated\simulator\include\simulator\video</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\mainmenu_screen\MainMenuPresenter.hpp">
+      <Filter>Header Files\gui\mainmenu_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\mainmenu_screen\MainMenuView.hpp">
+      <Filter>Header Files\gui\mainmenu_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\mainmenu_screen\MainMenuViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\mainmenu_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\oscilloscope_screen\OscilloscopePresenter.hpp">
+      <Filter>Header Files\gui\oscilloscope_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\oscilloscope_screen\OscilloscopeView.hpp">
+      <Filter>Header Files\gui\oscilloscope_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\oscilloscope_screen\OscilloscopeViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\oscilloscope_screen</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -24,6 +24,7 @@ extern uint32_t RTOS_RunTimeCounter;
 #define CRLF "\r\n"
 #define TAB  "    "
 
+/* Eval eTaskState To String */
 const char * evalState(eTaskState state)
 {
 	switch(state){
@@ -37,14 +38,6 @@ const char * evalState(eTaskState state)
 	}
 }
 
-BaseType_t Command_Info( char *WriteBuffer, size_t len, const char *CommandString );
-static const CLI_Command_Definition_t xInfo =
-{
-	"info",
-	"\r\ninfo: show sys info\r\n",
-	Command_Info, /* The function to run. */
-	0 /* No parameters are expected. */
-};
 BaseType_t Command_Info( char *WriteBuffer, size_t len, const char *CommandString )
 {
 	stringstream sstr;
@@ -102,8 +95,15 @@ BaseType_t Command_Info( char *WriteBuffer, size_t len, const char *CommandStrin
 	return pdFALSE;
 }
 
+
 void vRegisterMineCommands(void)
 {
+	static const CLI_Command_Definition_t xInfo =
+	{
+		"info",
+		"\r\ninfo: show sys info\r\n",
+		Command_Info, /* The function to run. */
+		0 /* No parameters are expected. */
+	};
 	FreeRTOS_CLIRegisterCommand( &xInfo );
-
 }
